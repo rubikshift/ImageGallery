@@ -26,7 +26,9 @@
         </ul>
     </nav>
     <section>
+        
         <h2 class="SectionText">Logowanie</h1>
+        <?php if(empty($user)):?>
         <form method="post">
             <fieldset class="SectionText">
                 <label for="login"><b>Login: </b></label><input type="text" name="login" placeholder="login"/><br/><br/>
@@ -35,6 +37,10 @@
             </fieldset>
         </form>
         <p class="SectionText">Nie masz konta? <a href="register.php">Zarejestruj się</a></p>
+        <?php else:?>
+        <p class="SectionText">Jesteś już zalogowany!</p>
+        <?php endif?>
+
     </section>
     <footer onmouseenter="dzialaj()" onmouseleave="dzialaj()">
         <p><a href="mailto:s165596@stundent.pg.gda.pl?subject=ProjektHiH-WAI">Michał Krakowiak<span> – Kliknij aby wysłać e-mail</span></a></p>
