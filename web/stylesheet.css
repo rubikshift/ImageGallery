@@ -1,0 +1,397 @@
+﻿body
+{
+    margin: 0;
+	padding: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: black;
+}
+
+header 
+{
+    width: 100%;
+    height: 3em;   
+    background-color: #185E7F;
+}
+header h1 
+{
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 2em;
+}
+
+section 
+{
+    width: 100%;
+    overflow: auto;
+    min-height: 400px;
+    background-color: white;
+}
+.SectionText
+{
+    text-align: justify;
+    margin-right: 2.5em;
+    margin-left: 2.5em; 
+}
+
+.red
+{
+    color: red;
+}
+
+.DropDown-Img
+{
+    float: right;
+    margin: 0 2.5em 1em 2.5em;
+    display: inline-block;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+}
+.DropDown-Img > img, .Gallery-Img > img
+{
+    width: 320px;
+    height: 214px;
+}
+
+section table, tr, td, th
+{
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.left
+{
+    float: left;
+    margin: 0 1em 1em 2.5em;
+}
+
+#explanation
+{
+    background-color: palegreen;
+    padding: 0.2em 0.4em;
+}
+#explanation tr, #explanation td
+{
+    border: 0;
+}
+
+nav 
+{
+    width: 100%;
+    min-height: 2.5em;    
+    margin: auto;
+    background-color: #31BCFF;
+}
+#menu
+{
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+}
+#menu li 
+{
+    float: left; 
+    height: 2.5em;
+}
+#menu li a, .dropbtn 
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.dropdown:hover .dropbtn
+{
+    background-color: #185E7F;
+}
+li.dropdown 
+{
+    display: inline-block;
+}
+.dropdown-content 
+ {
+    display: none;
+    position: fixed;
+    top: 5.5em;
+    background-color: #258DBF;
+    width: 134px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover 
+{
+    background-color: #F1F1F1;
+}
+.dropdown:hover .dropdown-content 
+{
+    display: block;
+}   
+#menu li a:hover, .button:hover, .BridgeNav li:hover
+{
+    color: white;
+    background-color: #0C2F40;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button
+{
+    border-radius: 5px;
+    background-color: #31BCFF;
+    margin-left: 2.5em;
+    width: 70px;
+    height: 30px;
+    font-size: 16px;
+    padding: 5px;
+}
+
+fieldset
+{
+    border-radius: 5px;
+}
+
+footer 
+{
+    width: 100%;
+    height: 2.3em;
+    font-size: 1em;
+    margin: auto;
+    background-color: #185E7F;
+}
+footer > p
+{
+    text-align: center;
+    margin-top: 0.5em;
+}
+footer p, footer a
+{
+    color: white;
+    text-decoration: none;
+}
+footer > p:hover > a 
+{
+    text-decoration: underline;
+}
+footer span
+{
+    display: none;
+}
+
+#BaseInfo
+{
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+#BaseInfo a
+{
+    text-decoration: none;
+}
+#BaseInfo tr, #BaseInfo th, #BaseInfo td
+{
+    border: 2px solid black;
+}
+
+.Gallery-Img
+{
+    display: inline-block;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    
+}
+
+.BridgeNav
+{
+    background-color: #31BCFF;
+    color: white;
+    width: 250px;
+    float: left;
+    margin: 2.5em 1em 1em 2.5em;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+}
+.BridgeNav ul
+{
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+}
+.BridgeNav a
+{
+    color: white;
+    text-decoration: none
+}
+
+.Questionnaire, .Questionnaire tr, .Questionnaire td
+{
+    border-collapse: separate;
+    text-align:left;
+    border: 0;
+}
+
+.SVG
+{
+    float: right;
+    margin: 0 2.5em 0 0;
+}
+
+.DropDown-Zoom
+{
+    display: none;
+    position: absolute;
+}
+.Gallery-Zoom, .DropDown-Zoom
+{
+    background-color: #F9F9F9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+}
+.Gallery-Zoom > img, .DropDown-Zoom > img
+{
+    width: 800px;
+    height: 536px;
+}
+.DropDown-Zoom, .Gallery-Zoom, #warning
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.Gallery-Zoom > figcaption
+{
+    text-align:center;
+}
+
+@keyframes my_animation {
+    0%   {background-color: red; left:0px; top:0px;}
+    25%  {background-color: yellow; left:200px; top:0px;}
+    50%  {background-color: blue; left:200px; top:200px;}
+    75%  {background-color: green; left:0px; top:200px;}
+    100% {background-color: red; left:0px; top:0px;}
+}
+.Animated 
+{
+    width: 100px;
+    height: 100px;
+    margin: 0 0 0 2.5em;
+    position: relative;
+    background-color: red;
+    animation-name: my_animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@media (min-width: 769px)
+{
+    header, nav, section, footer
+    {
+        position:fixed;
+    }
+    header
+    {
+        top: 0;
+    }    
+    nav
+    {
+        z-index: 2;
+        top: 3em;
+    }
+    section
+    {
+        top: 5.5em;
+        bottom: 2.5em;
+    }    
+    footer
+    {
+        bottom: 0;
+    }
+
+    .Gallery-Img:hover > .DropDown-Zoom
+    {
+        display: block;
+    }
+    .DropDown-Img:hover > .DropDown-Zoom
+    {
+        display: block;
+    }
+    .DropDown-Zoom > figcaption
+    {
+        text-align:center;
+    }
+
+    #warning
+    {
+        width: 20em;
+        height: 8.5em;
+        z-index: 3;
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid black;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    }
+    #warning > p 
+    {
+        margin: 1em 1em 1em 1em;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 768px) 
+{
+    body
+    {
+        display: block;
+    }
+    header, footer, nav, section
+    {
+        position:relative;
+    }
+    nav 
+    {
+        z-index: 2;   
+    }
+    section 
+    {
+       margin-bottom: 2.5em;
+    }
+    
+    .DropDown-Zoom, #warning 
+    {
+        display: none;
+    }
+    .Gallery-Zoom > img
+    {
+        width: 320px;
+        height: 214px;
+    }
+
+}
+
+.ui-tooltip
+{
+    width: 20em;
+    background: black;
+    border: 2px solid white;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    font: bold 14px Verdana, Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    box-shadow: 0 0 7px black;
+}
+
+#dialog
+{
+    display: none;
+    z-index: 2;
+    text-align: justify;
+}
