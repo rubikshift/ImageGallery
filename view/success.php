@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html lang="pl-PL" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -16,7 +14,7 @@
 </head>
 <body onload="dataStoragingWarning()">
     <header>
-        <h1>Logowanie</h1>
+        <h1>Rejestracja</h1>
     </header>
     <nav>
         <ul id="menu">
@@ -26,21 +24,7 @@
         </ul>
     </nav>
     <section>
-        
-        <h2 class="SectionText">Logowanie</h1>
-        <?php if(empty($user)):?>
-        <form method="post">
-            <fieldset class="SectionText">
-                <label for="login"><b>Login: </b></label><input type="text" name="login" placeholder="login"/><br/><br/>
-                <label for="password"><b>Hasło: </b><label><input type="password" name="password" placeholder="hasło"/><br/><br/>
-                <input class="button" type="submit" value="Zaloguj"/>
-            </fieldset>
-        </form>
-        <p class="SectionText">Nie masz konta? <a href="register.php">Zarejestruj się</a></p>
-        <?php else:?>
-        <p class="SectionText">Jesteś już zalogowany!</p>
-        <?php endif?>
-
+        <h2>Zarejestrowano pomyślnie</h2>
     </section>
     <footer onmouseenter="dzialaj()" onmouseleave="dzialaj()">
         <p><a href="mailto:s165596@stundent.pg.gda.pl?subject=ProjektHiH-WAI">Michał Krakowiak<span> – Kliknij aby wysłać e-mail</span></a></p>

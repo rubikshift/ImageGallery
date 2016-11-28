@@ -1,0 +1,1 @@
+<?php echo 'index.php'; include 'view/index_view.php'; ?>

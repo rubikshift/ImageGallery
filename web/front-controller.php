@@ -1,6 +1,5 @@
 <?php
+require '../routing.php';
 session_start();
-if($_GET['action'] == '/'):
-require '../view/index.php';
-endif
+require '../' . $routing[$_GET['action']] . '.php';
 ?>
