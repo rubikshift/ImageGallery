@@ -52,6 +52,11 @@
         else return false;
     }
 
+    function addImage($title, $author, $waterMarkedImage, $miniImage)
+    {
+        
+    }
+
     function removeCollection()
     {
         $db = getDB();

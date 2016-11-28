@@ -3,8 +3,8 @@
         '/' => 'index',
         '/index.php' => 'index',
         '/login.php' => 'login',
+        '/success_login.php' => 'view/success_login',
         '/register.php' => 'register',
-        '/success.php' => 'view/success',
-        '/fail.php' => 'view/fail'
+        '/success_register.php' => 'view/success_register',
     ];
 ?>

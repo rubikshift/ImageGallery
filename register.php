@@ -7,19 +7,9 @@
             $success = addUser((string)$_POST['email'], (string)$_POST['login'], (string)$_POST['password']);
             if($success == true)
             {   
-                header("Location: success.php");
+                header("Location: success_register.php");
                 exit;
             }
-            else
-            {   
-                header("Location: fail.php");
-                exit;
-            }
-        }
-        else
-        {   
-            header("Location: fail.php");
-            exit;
         }
     }
     include 'view/register_view.php';
