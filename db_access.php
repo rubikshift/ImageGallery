@@ -52,9 +52,30 @@
         else return false;
     }
 
-    function addImage($title, $author, $waterMarkedImage, $miniImage)
+    function addImage($title, $author, $original,  $waterMarkedImage, $miniImage)
     {
-        
+        $db = getDB();
+        $newImage = ['title' => $title, 'author' => $author, 'original' => $original, 'waterMarkedImage' => $waterMarkedImage, 'miniImage' => $miniImage];
+
+        if(checkIfImageNameExists($newImage) != true)
+        {
+            $db->gallery->insert($newImage);
+            return true;
+        }
+        else
+            return false;    
+    }
+
+    function checkIfImageNameExists($image)
+    {
+        $db = getDB();
+        $query = ['original' => $image['orginal']];
+        $result = $db->gallery->find($query);
+
+        if(empty($result))
+            return false;
+        else
+            return true;
     }
 
     function removeCollection()

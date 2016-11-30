@@ -1,5 +1,5 @@
 <?php
-    include 'db_access.php';
+    require 'db_access.php';
     if($_SERVER['REQUEST_METHOD'] === 'POST')
     { 
         if($_POST['password'] === $_POST['repeat_password'])
