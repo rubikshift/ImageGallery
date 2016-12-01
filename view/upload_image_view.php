@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="author" content="Michał Krakowiak 165596">
     <title>Moje Hobby</title>
-    <link type="text/css" rel="stylesheet" href="stylesheet.css" />
+    <link type="text/css" rel="stylesheet" href="stylesheet1.css" />
     <link type="text/css" rel="stylesheet" href="js/jquery-ui/jquery-ui.css" />
     <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="js/email_info.js"></script>

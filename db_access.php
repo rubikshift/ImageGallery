@@ -70,7 +70,7 @@
     {
         $db = getDB();
         $query = ['original' => $image['orginal']];
-        $result = $db->gallery->find($query);
+        $result = $db->gallery->findOne($query);
 
         if(empty($result))
             return false;

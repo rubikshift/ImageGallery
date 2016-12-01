@@ -25,13 +25,13 @@
 
     function checkImage()
     {
-        if($_FILES['image']['size'] == 1024*1024)
+        if($_FILES['image']['size'] <= 1024*1024)
         {
             $errors['size'] = false;
-            if($_FILES['type'] == 'image/jpeg')
+            if($_FILES['image']['type'] == 'image/jpeg')
                 $errors['type'] = !checkJpg();
-            elseif($_FILES['tpye'] == 'image/png')
-                $errors['type'] = !chceckPng();
+            elseif($_FILES['image']['type'] == 'image/png')
+                $errors['type'] = !checkPng();
             else 
                 $errors['type'] = true;
         }
@@ -42,7 +42,7 @@
 
     function moveFile()
     {
-        $uploadDir = 'web/images/';
+        $uploadDir = '/var/www/dev/web/images/';
         $target = $uploadDir . $_FILES['image']['name'];
 
         move_uploaded_file($_FILES['image']['tmp_name'], $target); 
@@ -50,7 +50,7 @@
 
     function addWatermark($watermark)
     {
-        $uploadDir = 'web/images/';
+        $uploadDir = '/var/www/dev/web/web/images/';
         $imagePath = $uploadDir . $_FILES['image']['name'];
         if($_FILES['image']['type'] == 'image/png')
             $image = imagecreatefrompng($imagePath);
@@ -59,28 +59,28 @@
         $temp = imagecreate(100, 100);
         $white = imagecolorallocate($temp, 255, 255, 255);
         imagestring($image, 3, 1, 1, $watermark, $white);
-        imagedestroy($temp);
         if($_FILES['image']['type'] == 'image/png')
         {
             $suffix = '.png';
-            $fileName = basename($_FILES['image']['name']) . 'watermarked' . $suffix;
+            $fileName = basename($_FILES['image']['name'], $suffix) . 'watermarked' . $suffix;
             $target = $uploadDir . $fileName;
             imagepng($image, $fileName); 
         }
-        elseif($_FILES['image']['type'] == 'image/jpg')
+        elseif($_FILES['image']['type'] == 'image/jpeg')
         {
             $suffix = '.jpg';
-            $fileName = basename($_FILES['image']['name']) . 'watermarked' . $suffix;
+            $fileName = basename($_FILES['image']['name'], $suffix) . 'watermarked' . $suffix;
             $target = $uploadDir . $fileName;
             imagejpeg($image, $target); 
         }
+        imagedestroy($temp);
         imagedestroy($image);
         return $fileName;
     }
 
     function generateMiniImage($fileName)
     {
-        $uploadDir = 'web/images/';
+        $uploadDir = '/var/www/dev/web/web/images/';
         $imagePath = $uploadDir . $fileName;
         if($_FILES['image']['type'] == 'image/png')
             $image = imagecreatefrompng($imagePath);
@@ -95,14 +95,14 @@
         if($_FILES['image']['type'] == 'image/png')
         {
             $suffix = '.png';
-            $fileName = basename($fileName) . 'mini' . $suffix;
+            $fileName = basename($fileName, $suffix) . 'mini' . $suffix;
             $target = $uploadDir . $fileName;
             imagepng($newImage, $fileName); 
         }
-        elseif($_FILES['image']['type'] == 'image/jpg')
+        elseif($_FILES['image']['type'] == 'image/jpeg')
         {
             $suffix = '.jpg';
-            $fileName = basename($fileName) . 'mini' . $suffix;
+            $fileName = basename($fileName, $suffix) . 'mini' . $suffix;
             $target = $uploadDir . $fileName;
             imagejpeg($newImage, $target); 
         }
