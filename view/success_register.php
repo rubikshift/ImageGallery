@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html lang="pl-PL" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -21,10 +23,11 @@
             <li><a href="index.php">Strona domowa</a></li>
             <li><a href="login.php">Logowanie</a></li>
             <li><a href="gallery.php">Galeria</a></li>
+            <li><a href="upload_image.php">Prześlij zdjęcie</a></li>
         </ul>
     </nav>
     <section>
-        <h2>Zarejestrowano pomyślnie</h2>
+        <h2 class="SectionText">Zarejestrowano pomyślnie</h2>
     </section>
     <footer onmouseenter="dzialaj()" onmouseleave="dzialaj()">
         <p><a href="mailto:s165596@stundent.pg.gda.pl?subject=ProjektHiH-WAI">Michał Krakowiak<span> – Kliknij aby wysłać e-mail</span></a></p>

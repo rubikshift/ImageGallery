@@ -23,6 +23,7 @@
             <li><a href="index.php">Strona domowa</a></li>
             <li><a href="login.php">Logowanie</a></li>
             <li><a href="gallery.php">Galeria</a></li>
+            <li><a href="upload_image.php">Prześlij zdjęcie</a></li>
         </ul>
     </nav>
     <section>

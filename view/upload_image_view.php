@@ -23,6 +23,7 @@
             <li><a href="index.php">Strona domowa</a></li>
             <li><a href="login.php">Logowanie</a></li>
             <li><a href="gallery.php">Galeria</a></li>
+            <li><a href="upload_image.php">Prześlij zdjęcie</a></li>
         </ul>
     </nav>
     <section>
@@ -30,7 +31,7 @@
         <form method="post" enctype="multipart/form-data">
             <fieldset class="SectionText">
                 <label for="title"><b>Tytuł: </b></label><input type="text" name="title" placeholder="tytuł"/><br/><br/>
-                <?php if(empty($_SESSION['user_id'])
+               <?php if(empty($_SESSION['user_id']))
                 {
                     echo "<label for='author'><b>Autor: </b></label><input type='text' name='author' placeholder='autor'/><br/><br/>";
                 }
@@ -38,12 +39,12 @@
                 {
                     $db = getDB();
                     $query = ['_id' => $_SESSION['user_id']];
-                    $result = $db->users->find($query);
+                    $result = $db->users->findOne($query);
                     $username = $result['username'];
-                    echo "<label for='author'><b>Autor: </b></label><input type='text' name='author' placeholder='autor' value='$username'/><br/><br/>"
+                    echo "<label for='author'><b>Autor: </b></label><input type='text' name='author' placeholder='autor' value='$username'/><br/><br/>";
                 } ?>
                 <label for="waterMark"><b>ZnakWodny: </b><label><input type="text" name="waterMark" placeholder="znak wodny"/><br/><br/>
-                <label for="image"><b>Plik: </b><label><input type="file" name="image" accept=".png | .jpg" placeholder="plik"/><br/><br/>
+                <label for="image"><b>Plik: </b><label><input type="file" name="image" accept=".png,.jpg" placeholder="plik"/><br/><br/>
                 <input class="button" type="submit" value="Gotowe"/>
             </fieldset>
         </form>

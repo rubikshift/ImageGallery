@@ -29,7 +29,7 @@
         {
             $errors['size'] = false;
             if($_FILES['type'] == 'image/jpeg')
-                $errors['type'] = !checkJpg());
+                $errors['type'] = !checkJpg();
             elseif($_FILES['tpye'] == 'image/png')
                 $errors['type'] = !chceckPng();
             else 
@@ -63,14 +63,14 @@
         if($_FILES['image']['type'] == 'image/png')
         {
             $suffix = '.png';
-            $fileName = basename($_FILES]['image']['name']) . 'watermarked' . $suffix;
+            $fileName = basename($_FILES['image']['name']) . 'watermarked' . $suffix;
             $target = $uploadDir . $fileName;
             imagepng($image, $fileName); 
         }
         elseif($_FILES['image']['type'] == 'image/jpg')
         {
             $suffix = '.jpg';
-            $fileName = basename($_FILES]['image']['name']) . 'watermarked' . $suffix;
+            $fileName = basename($_FILES['image']['name']) . 'watermarked' . $suffix;
             $target = $uploadDir . $fileName;
             imagejpeg($image, $target); 
         }
