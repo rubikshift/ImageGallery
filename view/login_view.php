@@ -29,18 +29,22 @@
     <section>
         <h2 class="SectionText">Logowanie</h1>
         <?php if(empty($_SESSION['user_id'])):?>
-        <form method="post">
-            <fieldset class="SectionText">
-                <label for="login"><b>Login: </b></label><input type="text" name="login" placeholder="login"/><br/><br/>
-                <label for="password"><b>Hasło: </b><label><input type="password" name="password" placeholder="hasło"/><br/><br/>
-                <input class="button" type="submit" value="Zaloguj"/>
-            </fieldset>
-        </form>
-        <p class="SectionText">Nie masz konta? <a href="register.php">Zarejestruj się</a></p>
+            <form method="post">
+                <fieldset class="SectionText">
+                    <label for="login"><b>Login: </b></label><input type="text" name="login" placeholder="login" required/><br/><br/>
+                    <label for="password"><b>Hasło: </b><label><input type="password" name="password" placeholder="hasło" required/><br/><br/>
+                    <input class="button" type="submit" value="Zaloguj"/>
+                </fieldset>
+            </form>
+            <p class="SectionText">Nie masz konta? <a href="register.php">Zarejestruj się</a></p>
         <?php else:?>
-        <p class="SectionText">Jesteś już zalogowany!</p>
+            <p class="SectionText">Jesteś już zalogowany!</p>
         <?php endif?>
-
+        <?php if($_SERVER['REQUEST_METHOD'] === 'POST'):?>
+            <?php if($success != true):?>
+                <p class="SectionText"><span class="red">Niepoprawny login lub hasło!</span></p>
+            <?php endif?>
+        <?php endif?>
     </section>
     <footer onmouseenter="dzialaj()" onmouseleave="dzialaj()">
         <p><a href="mailto:s165596@stundent.pg.gda.pl?subject=ProjektHiH-WAI">Michał Krakowiak<span> – Kliknij aby wysłać e-mail</span></a></p>

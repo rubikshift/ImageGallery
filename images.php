@@ -50,21 +50,23 @@
 
     function addWatermark($watermark)
     {
-        $uploadDir = '/var/www/dev/web/web/images/';
+        $uploadDir = '/var/www/dev/web/images/';
         $imagePath = $uploadDir . $_FILES['image']['name'];
         if($_FILES['image']['type'] == 'image/png')
             $image = imagecreatefrompng($imagePath);
-        elseif($_FILES['image']['type'] == 'image/jpg')
+        elseif($_FILES['image']['type'] == 'image/jpeg')
             $image = imagecreatefromjpeg($imagePath);
-        $temp = imagecreate(100, 100);
-        $white = imagecolorallocate($temp, 255, 255, 255);
-        imagestring($image, 3, 1, 1, $watermark, $white);
+        $white = imagecolorallocate($image, 255, 255, 255);
+        $grey = imagecolorallocate($image, 128, 128, 128);
+        $font = './roboto.ttf';
+        imagettftext($image, 40, 0, 6, 46, $grey, $font, $watermark);
+        imagettftext($image, 40, 0, 5, 45, $white, $font, $watermark);
         if($_FILES['image']['type'] == 'image/png')
         {
             $suffix = '.png';
             $fileName = basename($_FILES['image']['name'], $suffix) . 'watermarked' . $suffix;
             $target = $uploadDir . $fileName;
-            imagepng($image, $fileName); 
+            imagepng($image, $target); 
         }
         elseif($_FILES['image']['type'] == 'image/jpeg')
         {
@@ -73,18 +75,17 @@
             $target = $uploadDir . $fileName;
             imagejpeg($image, $target); 
         }
-        imagedestroy($temp);
         imagedestroy($image);
         return $fileName;
     }
 
     function generateMiniImage($fileName)
     {
-        $uploadDir = '/var/www/dev/web/web/images/';
+        $uploadDir = '/var/www/dev/web/images/';
         $imagePath = $uploadDir . $fileName;
         if($_FILES['image']['type'] == 'image/png')
             $image = imagecreatefrompng($imagePath);
-        elseif($_FILES['image']['type'] == 'image/jpg')
+        elseif($_FILES['image']['type'] == 'image/jpeg')
             $image = imagecreatefromjpeg($imagePath);
         $newWidth = 200;
         $width = imagesx($image);
@@ -97,7 +98,7 @@
             $suffix = '.png';
             $fileName = basename($fileName, $suffix) . 'mini' . $suffix;
             $target = $uploadDir . $fileName;
-            imagepng($newImage, $fileName); 
+            imagepng($newImage, $target); 
         }
         elseif($_FILES['image']['type'] == 'image/jpeg')
         {

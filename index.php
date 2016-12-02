@@ -1,1 +1,1 @@
-<?php echo 'index.php'; include 'view/index_view.php'; ?>
+<?php include 'view/index_view.php'; ?>
