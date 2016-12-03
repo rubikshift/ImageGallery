@@ -79,7 +79,7 @@
         return $fileName;
     }
 
-    function generateMiniImage($fileName)
+    function generateThumbnail($fileName)
     {
         $uploadDir = '/var/www/dev/web/images/';
         $imagePath = $uploadDir . $fileName;
@@ -96,14 +96,14 @@
         if($_FILES['image']['type'] == 'image/png')
         {
             $suffix = '.png';
-            $fileName = basename($fileName, $suffix) . 'mini' . $suffix;
+            $fileName = basename($fileName, $suffix) . 'thumbnail' . $suffix;
             $target = $uploadDir . $fileName;
             imagepng($newImage, $target); 
         }
         elseif($_FILES['image']['type'] == 'image/jpeg')
         {
             $suffix = '.jpg';
-            $fileName = basename($fileName, $suffix) . 'mini' . $suffix;
+            $fileName = basename($fileName, $suffix) . 'thumbnail' . $suffix;
             $target = $uploadDir . $fileName;
             imagejpeg($newImage, $target); 
         }

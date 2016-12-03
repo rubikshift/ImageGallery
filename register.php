@@ -7,7 +7,7 @@
             $success = addUser((string)$_POST['email'], (string)$_POST['login'], (string)$_POST['password']);
             if($success == true)
             {   
-                header("Location: success_register.php");
+                header("Location: success_register");
                 exit;
             }
         }

@@ -5,7 +5,7 @@
         $success = signInUser((string)$_POST['login'], (string)$_POST['password']);
         if($success)
         {   
-            header("Location: success_login.php");
+            header("Location: success_login");
             exit;
         }
     }

@@ -1,12 +1,17 @@
 <?php
     $routing = [
-        '/' => 'index',
-        '/index.php' => 'index',
-        '/login.php' => 'login',
-        '/success_login.php' => 'view/success_login',
-        '/register.php' => 'register',
-        '/success_register.php' => 'view/success_register',
-        '/upload_image.php' => 'upload_image',
-        '/success_upload.php' => 'view/success_upload'
+        '/' => 'view/index',
+        '/index' => 'view/index',
+        '/login' => 'login',
+        '/logout' => 'logout',
+        '/success_login' => 'view/success_login',
+        '/register' => 'register',
+        '/success_register' => 'view/success_register',
+        '/upload_image' => 'upload_image',
+        '/success_upload' => 'view/success_upload',
+        '/gallery' => 'gallery',
+        '/personal_gallery' => 'personal_gallery',
+        '/search' => 'view/search_view',
+        '/getSearchResult' => 'search'
     ];
 ?>

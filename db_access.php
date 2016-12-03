@@ -52,10 +52,10 @@
         else return false;
     }
 
-    function addImage($title, $author, $original,  $waterMarkedImage, $miniImage)
+    function addImage($title, $author, $original,  $watermarked, $thumbnail, $visibility)
     {
         $db = getDB();
-        $newImage = ['title' => $title, 'author' => $author, 'original' => $original, 'waterMarkedImage' => $waterMarkedImage, 'miniImage' => $miniImage];
+        $newImage = ['title' => $title, 'author' => $author, 'original' => $original, 'watermarked' => $watermarked, 'thumbnail' => $thumbnail, 'visibility' => $visibility];
 
         if(checkIfImageNameExists($newImage) != true)
         {
@@ -78,10 +78,11 @@
             return true;
     }
 
-    function removeCollection()
+    /*function removeCollections()
     {
         $db = getDB();
         $db->users->remove();
-    }
+        $db->gallery->remove();
+    }*/
 
 ?>

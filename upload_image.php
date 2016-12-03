@@ -9,11 +9,15 @@
             moveFile();
             $original = $_FILES['image']['name'];
             $watermarked = addWatermark($_POST['watermark']);
-            $miniImage = generateMiniImage($watermarked);
-            $success = addImage($_POST['title'], $_POST['author'], $original, $watermarked, $miniImage);
+            $thumbnail = generateThumbnail($watermarked);
+            if($_POST['visibility'] == 'private')
+                $visibility = $_SESSION['user_id'];
+            else
+                $visibility = 'public';
+            $success = addImage($_POST['title'], $_POST['author'], $original, $watermarked, $thumbnail, $visibility);
             if($success)
             {   
-                header("Location: success_upload.php");
+                header("Location: success_upload");
                 exit;
             }
         }
