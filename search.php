@@ -10,7 +10,7 @@
             $query = ['title' => new MongoRegex("/$title/i")];
             $results = $db->gallery->find($query);
             foreach($results as $result)
-            {
+            {   
                 $imageThumbnailPath = $path . $result['thumbnail'];
                 $imageWatermarkedPath = $path . $result['watermarked'];
                 $title = $result['title'];

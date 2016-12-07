@@ -57,7 +57,7 @@
         $db = getDB();
         $newImage = ['title' => $title, 'author' => $author, 'original' => $original, 'watermarked' => $watermarked, 'thumbnail' => $thumbnail, 'visibility' => $visibility];
 
-        if(checkIfImageNameExists($newImage) != true)
+        if(checkIfImageNameExists($original) != true)
         {
             $db->gallery->insert($newImage);
             return true;
@@ -66,10 +66,10 @@
             return false;    
     }
 
-    function checkIfImageNameExists($image)
+    function checkIfImageNameExists($original)
     {
         $db = getDB();
-        $query = ['original' => $image['orginal']];
+        $query = ['original' => $original];
         $result = $db->gallery->findOne($query);
 
         if(empty($result))
@@ -78,11 +78,11 @@
             return true;
     }
 
-    /*function removeCollections()
+    function removeCollections()
     {
         $db = getDB();
         $db->users->remove();
         $db->gallery->remove();
-    }*/
+    }
 
 ?>

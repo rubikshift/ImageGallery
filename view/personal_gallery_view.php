@@ -9,6 +9,7 @@
         <h2 class="SectionText">Twoja galeria</h2>
         <form action="personal_gallery" method="post">
             <fieldset class="SectionText">
+                <?php if(isset($_SESSION['selectedImages'])):?>
                 <?php foreach($_SESSION['selectedImages'] as $imageId):                    
                     $query = ['_id' => new MongoId($imageId)];
                     $image = $db->gallery->findOne($query);
@@ -31,6 +32,7 @@
                         </figure>
                     <?php endif?>
                 <?php endforeach?>
+                <?php endif?>
                 <br/><br/>
                 <input class="button" type="submit" value="Usuń zaznaczone z zapamiętanych"/>
             </fieldset>

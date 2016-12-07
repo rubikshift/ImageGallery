@@ -42,7 +42,7 @@
 
     function moveFile()
     {
-        $uploadDir = '/var/www/dev/web/images/';
+        $uploadDir = '/var/www/prod/web/images/';
         $target = $uploadDir . $_FILES['image']['name'];
 
         move_uploaded_file($_FILES['image']['tmp_name'], $target); 
@@ -50,7 +50,7 @@
 
     function addWatermark($watermark)
     {
-        $uploadDir = '/var/www/dev/web/images/';
+        $uploadDir = '/var/www/prod/web/images/';
         $imagePath = $uploadDir . $_FILES['image']['name'];
         if($_FILES['image']['type'] == 'image/png')
             $image = imagecreatefrompng($imagePath);
@@ -81,7 +81,7 @@
 
     function generateThumbnail($fileName)
     {
-        $uploadDir = '/var/www/dev/web/images/';
+        $uploadDir = '/var/www/prod/web/images/';
         $imagePath = $uploadDir . $fileName;
         if($_FILES['image']['type'] == 'image/png')
             $image = imagecreatefrompng($imagePath);
