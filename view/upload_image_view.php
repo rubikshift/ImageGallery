@@ -41,7 +41,7 @@
                 <p class="SectionText"><span class="red">Niepoprawny rozmiar pliku!</span></p>
             <?php endif ?>
             <?php if($errors['type']):?>
-                <p class="SectionText"><span class="red">Niepoprawny rozmiar pliku!</span></p>
+                <p class="SectionText"><span class="red">Niepoprawny format pliku!</span></p>
             <?php endif ?>
         <?php endif?>
     </section>

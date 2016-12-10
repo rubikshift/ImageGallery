@@ -4,6 +4,7 @@
     if($_SERVER['REQUEST_METHOD'] === 'POST')
     {
         $errors = checkImage();
+        print_r($errors);
         if($errors['size'] == false && $errors['type'] == false)
         {
             moveFile();

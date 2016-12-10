@@ -26,17 +26,17 @@
     function checkImage()
     {
         if($_FILES['image']['size'] <= 1024*1024)
-        {
             $errors['size'] = false;
-            if($_FILES['image']['type'] == 'image/jpeg')
-                $errors['type'] = !checkJpg();
-            elseif($_FILES['image']['type'] == 'image/png')
-                $errors['type'] = !checkPng();
-            else 
-                $errors['type'] = true;
-        }
         else 
             $errors['size'] = true;
+        
+        if($_FILES['image']['type'] == 'image/jpeg')
+            $errors['type'] = !checkJpg();
+        elseif($_FILES['image']['type'] == 'image/png')
+            $errors['type'] = !checkPng();
+        else 
+            $errors['type'] = true;
+
         return $errors;
     }
 
